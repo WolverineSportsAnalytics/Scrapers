@@ -21,6 +21,8 @@ for tr in soup.find_all('tr')[2:]:
     name = tds[1].text
     if name.find('GTD') != -1: #throws an error if "GTD" is listed in the table after player name, so we must remove it
     	name = name[:-4]
+    if name.find('Out') != -1:
+    	name = name[:-4]
     name = name.encode('ascii')
     name = str(name)
 
