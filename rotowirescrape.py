@@ -44,7 +44,7 @@ for tr in soup.find_all('tr')[2:]:
     salary = tds[8].text
     salary = str(salary[1:])
     salaries = salary.split(',') #this must be created because some salaries are > 10,000 and some are 9,000 and below
-    salary = str(salaries[0]) + '/' + str(salaries[1]) #FIXME
+    salary = str(salaries[0]) + str(salaries[1]) #FIXME
 
     projpts = tds[9].text
     projpts = str(projpts.encode('ascii'))
