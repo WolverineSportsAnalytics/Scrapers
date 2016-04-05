@@ -10,8 +10,6 @@ url = "http://www.rotowire.com/daily/nba/defense-vspos.htm?statview=last10&pos=S
 page = urllib2.urlopen(url).read()
 soup = BeautifulSoup(page, "html.parser")
 
-data = soup.find_all('tr')
-
 rotowireFanduelDvPLast10SF = open('rotowireFanduelDvPLast10SF.csv', 'w')
 rotowireFanduelDvPLast10SF.write("Team, Vs. Pos, Season, Last 5, Last 10, PTS, REB, AST, STL, BLK, 3PM, FG%, FT%, TO" + "\n")
 
@@ -88,37 +86,37 @@ for tr in soup.find_all('tr')[2:]:
     season = str(season.encode('ascii'))
 
     last5 = tds[3].text
-    last5 = str(last5.encode('ascii'))
+    last5 = str(last5.encode('utf-8'))
 
     last10 = tds[4].text
-    last10 = str(last10.encode('ascii'))
+    last10 = str(last10.encode('utf-8'))
 
     pts = tds[5].text
-    pts = str(pts.encode('ascii'))
+    pts = str(pts.encode('utf-8'))
 
     reb = tds[6].text
-    reb = str(reb.encode('ascii'))
+    reb = str(reb.encode('utf-8'))
 
     ast = tds[7].text
-    ast = str(ast.encode('ascii'))
+    ast = str(ast.encode('utf-8'))
 
     stl = tds[8].text
-    stl = str(stl.encode('ascii'))
+    stl = str(stl.encode('utf-8'))
 
     blk = tds[9].text
-    blk = str(blk.encode('ascii'))
+    blk = str(blk.encode('utf-8'))
 
     threePM = tds[10].text
-    threePM = str(threePM.encode('ascii'))
+    threePM = str(threePM.encode('utf-8'))
 
     fgPercent = tds[11].text
-    fgPercent = str(fgPercent.encode('ascii'))
+    fgPercent = str(fgPercent.encode('utf-8'))
 
     ftPercent = tds[12].text
-    ftPercent = str(ftPercent.encode('ascii'))
+    ftPercent = str(ftPercent.encode('utf-8'))
 
     turnOver = tds[13].text
-    turnOver = str(turnOver.encode('ascii'))
+    turnOver = str(turnOver.encode('utf-8'))
 
     data = (name, vsPos, season, last5, last10, pts, reb, ast, stl, blk, threePM, fgPercent, ftPercent, turnOver)
     rotowireFanduelDvPLast10SF.write('%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, \n' % data)

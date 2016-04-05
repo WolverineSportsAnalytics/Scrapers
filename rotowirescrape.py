@@ -26,10 +26,10 @@ for tr in soup.find_all('tr')[2:]:
     name = name.encode('ascii')
     name = str(name)
 
-    team = tds[2].text
+    team = (tds[2].text).replace('@', '')
     team = str(team.encode('ascii'))
 
-    opponent = tds[3].text
+    opponent = (tds[3].text).replace('@', '')
     opponent = str(opponent.encode('ascii'))
 
     position = tds[4].text
