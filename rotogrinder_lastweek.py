@@ -5,13 +5,13 @@ import urllib2
 import csv
 import demjson
 
-url = "https://rotogrinders.com/game-stats/nba-player?site=fanduel&range=3weeks"
+url = "https://rotogrinders.com/game-stats/nba-player?site=fanduel&range=1week"
 
 page = urllib2.urlopen(url).read()
 soup = BeautifulSoup(page, "html.parser")
 
-rotogrinder_misc = open('rotogrinder_misc.csv', 'w')
-rotogrinder_misc.write("Player, Team, Pos, Salary, GP, MIN, REB, AST, STL, BLK, TO, PTS, USG, FPTS" + "\n")
+rotogrinder_lastweek = open('rotogrinder_lastweek.csv', 'w')
+rotogrinder_lastweek.write("Player, Team, Pos, Salary, GP, MIN, REB, AST, STL, BLK, TO, PTS, USG, FPTS" + "\n")
 
 script = soup.find_all('script')[6:7]
 js_obj = script[0].text
@@ -48,8 +48,8 @@ for line in py_obj:
 
     if(salary is not None):
         data = (player, team, pos, salary, gp, mins, reb, ast, stl, blk, to, pts, usg, fpts)
-        rotogrinder_misc.write('%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s \n' % data)
+        rotogrinder_lastweek.write('%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s \n' % data)
 
-rotogrinder_misc.close()
+rotogrinder_lastweek.close()
 
 
