@@ -50,6 +50,8 @@ for tr in soup.find_all('tr')[2:]:
 
     projpts = tds[9].text
     projpts = str(projpts.encode('ascii'))
+    if projpts == '':
+        projpts = soup.find_all(class_="rwo-points").data-points
 
     value = tds[10].text
     value = str(value.encode('ascii'))
@@ -59,3 +61,24 @@ for tr in soup.find_all('tr')[2:]:
     rotowire.write('%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, \n' % data)
 
 rotowire.close()
+
+reader = csv.reader(open("rotowire.csv"))
+htmlfile = open("rotowire.html","w+")
+
+row = 0
+
+htmlfile.write('<table>')
+
+for row in reader:
+    htmlfile.write('<tr>')
+    for column in row:
+            htmlfile.write('<th>' + column + '</th>')
+    htmlfile.write('</tr>')
+
+htmlfile.write('</table>')
+htmlfile.close()
+
+
+
+
+
