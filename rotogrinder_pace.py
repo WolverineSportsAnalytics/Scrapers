@@ -94,3 +94,18 @@ for tr in soup.find_all('tr')[5:]:
 
 rotogrinder_pace.close()
 
+reader = csv.reader(open("rotogrinder_pace.csv"))
+
+row = 0
+
+html = '<table>'
+
+for row in reader:
+    html += '<tr>'
+    for column in row:
+            html += '<th>' 
+            html += column 
+            html += '</th>'
+    html += '</tr>'
+
+html += '</table>'

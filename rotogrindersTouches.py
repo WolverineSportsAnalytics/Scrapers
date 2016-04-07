@@ -237,3 +237,19 @@ for tr in soup.find_all('tr')[4:]:
     rotogrindersTouches.write('%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, \n' % data)
 
 rotogrindersTouches.close()
+
+reader = csv.reader(open("rotogrindersTouches.csv"))
+
+row = 0
+
+html = '<table>'
+
+for row in reader:
+    html += '<tr>'
+    for column in row:
+            html += '<th>' 
+            html += column 
+            html += '</th>'
+    html += '</tr>'
+
+html += '</table>'

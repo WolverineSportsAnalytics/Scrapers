@@ -55,4 +55,18 @@ for line in py_obj:
 
 rotogrinders_consistency.close()
 
+reader = csv.reader(open("rotogrinders_consistency.csv"))
 
+row = 0
+
+html = '<table>'
+
+for row in reader:
+    html += '<tr>'
+    for column in row:
+            html += '<th>' 
+            html += column 
+            html += '</th>'
+    html += '</tr>'
+
+html += '</table>'

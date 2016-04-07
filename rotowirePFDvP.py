@@ -122,3 +122,19 @@ for tr in soup.find_all('tr')[2:]:
     rotowireFanduelDvPLast10PF.write('%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, \n' % data)
 
 rotowireFanduelDvPLast10PF.close()
+
+reader = csv.reader(open("rotowireFanduelDvPLast10PF.csv"))
+
+row = 0
+
+html = '<table>'
+
+for row in reader:
+    html += '<tr>'
+    for column in row:
+            html += '<th>' 
+            html += column 
+            html += '</th>'
+    html += '</tr>'
+
+html += '</table>'

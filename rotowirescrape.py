@@ -63,22 +63,17 @@ for tr in soup.find_all('tr')[2:]:
 rotowire.close()
 
 reader = csv.reader(open("rotowire.csv"))
-htmlfile = open("rotowire.html","w+")
 
 row = 0
 
-htmlfile.write('<table>')
+html = '<table>'
 
 for row in reader:
-    htmlfile.write('<tr>')
+    html += '<tr>'
     for column in row:
-            htmlfile.write('<th>' + column + '</th>')
-    htmlfile.write('</tr>')
+            html += '<th>' 
+            html += column 
+            html += '</th>'
+    html += '</tr>'
 
-htmlfile.write('</table>')
-htmlfile.close()
-
-
-
-
-
+html += '</table>'
