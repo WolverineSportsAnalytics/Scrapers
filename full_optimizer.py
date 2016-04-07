@@ -1587,3 +1587,5 @@ def pace():
 
 	html += '</table>'
 	return html
+
+print center(), power_forward(), small_forward(), shooting_guard(), point_guard(), main(), last_week(), misc(), consistency(), advanced_stats(), touches(), pace()
