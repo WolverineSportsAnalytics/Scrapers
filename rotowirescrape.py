@@ -51,7 +51,7 @@ for tr in soup.find_all('tr')[2:]:
     projpts = tds[9].text
     projpts = str(projpts.encode('ascii'))
     if projpts == '':
-        projpts = soup.find_all(class_="rwo-points").data-points
+        projpts = tds[9]['data-points']
 
     value = tds[10].text
     value = str(value.encode('ascii'))
