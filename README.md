@@ -1,9 +1,9 @@
 WOLVERINE SPORTS ANALYTICS - SOFTWARE TEAM
 
 # Contributers
-Alex Thal
-Peter Mack
-Brendan Hart
+- Alex Thal
+- Peter Mack
+- Brendan Hart
 
 # Scrapers
 Scapers for Rotowire Data 
