@@ -6,5 +6,6 @@ Scapers for Rotowire Data
 - https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 - Dynamically Adjusts for Team Abbrev, Out, GTD, and @(Team Abbrev)
 
-Scrapers for Rotogrinders Data
-- TBD
+Scrapers for Rotogrinders + Other Websites Data
+- Demjson to scrape JSON Objects 
+- Use Selelium Web Driver to dynamically scrape data too 
