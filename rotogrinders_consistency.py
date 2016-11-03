@@ -5,7 +5,7 @@ import urllib2
 import csv
 import demjson
 
-url = "https://rotogrinders.com/game-stats/nba/consistency?site=fanduel&range=3weeks"
+url = "https://rotogrinders.com/game-stats/nba/consistency?site=fanduel&range=4weeks"
 
 page = urllib2.urlopen(url).read()
 soup = BeautifulSoup(page, "html.parser")
