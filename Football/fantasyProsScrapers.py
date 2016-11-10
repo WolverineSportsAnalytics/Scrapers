@@ -6,37 +6,37 @@ import csv
 
 def fantasypros_qb_scraper():
     url = "https://www.fantasypros.com/nfl/projections/qb.php"
-    csv_filename = 'fantasypros_qb_table.csv'
+    csv_filename = 'fantasypros_qb_table_football.csv'
     stats = ["Name", "Team", "Passing Attempts", "Passing Completions", "Passing Yards", "Passing Touchdowns", "Passing Interceptions", "Rushing Attempts", "Rushing Yards", "Rushing Touchdowns", "FL", "FPTS"]
     fantasypros_scraper(url, csv_filename, stats)
     
 def fantasypros_rb_scraper():
     url = "https://www.fantasypros.com/nfl/projections/rb.php"
-    csv_filename = 'fantasypros_rb_table.csv'
+    csv_filename = 'fantasypros_rb_table_football.csv'
     stats = ["Name", "Team", "Rushing Attempts", "Rushing Yards", "Rushing Touchdowns", "Receiving Receptions", "Receiving Yards", "Receiving Touchdowns", "FL", "FPTS"]
     fantasypros_scraper(url, csv_filename, stats)
 
 def fantasypros_wr_scraper():
     url = "https://www.fantasypros.com/nfl/projections/wr.php"
-    csv_filename = 'fantasypros_wr_table.csv'
+    csv_filename = 'fantasypros_wr_table_football.csv'
     stats = ["Name", "Team", "Rushing Attempts", "Rushing Yards", "Rushing Touchdowns", "Receptions", "Recieving Yards", "Recieving Touchdowns", "FL", "FPTS"]
     fantasypros_scraper(url, csv_filename, stats)
     
 def fantasypros_te_scraper():
     url = "https://www.fantasypros.com/nfl/projections/te.php"
-    csv_filename = 'fantasypros_te_table.csv'
+    csv_filename = 'fantasypros_te_table_football.csv'
     stats = ["Name", "Team", "Receptions", "Yards", "Touchdowns", "FL", "FPTS"]
     fantasypros_scraper(url, csv_filename, stats)
     
 def fantasypros_k_scraper():
     url = "https://www.fantasypros.com/nfl/projections/k.php"
-    csv_filename = 'fantasypros_k_table.csv'
+    csv_filename = 'fantasypros_k_table_football.csv'
     stats = ["Name", "Team", "Field Goals", "Field Goal Attemps", "Extra Points", "FPTS"]
     fantasypros_scraper(url, csv_filename, stats)
     
 def fantasypros_dst_scraper():
     url = "https://www.fantasypros.com/nfl/projections/dst.php"
-    csv_filename = 'fantasypros_dst_table.csv'
+    csv_filename = 'fantasypros_dst_table_football.csv'
     stats = ["Name", "Sack", "Interceptions", "Fumble Recoveries", "Forced Fumbles", "TD", "Assist", "Safety", "Points Allowed", "Yards Allowed", "FPTS"]
     fantasypros_scraper(url, csv_filename, stats)
     
