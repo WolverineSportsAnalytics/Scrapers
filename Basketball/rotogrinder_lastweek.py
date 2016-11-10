@@ -29,26 +29,25 @@ js_obj = js_obj[:-1]
 py_obj = demjson.decode(js_obj)
 
 for line in py_obj:
-    player = line['player']
+    player = (line['player'])
     team = line['team']
     pos = line['pos']
     salary = line['salary']
     gp = line['gp']
-    mins = line['min']
-    reb = line['reb']
-    ast = line['ast']
-    stl = line['stl']
-    blk = line['blk']
-    to = line['to']
-    pts = line['pts']
+    mins = float(line['min']) / float(gp)
+    reb = float(line['reb']) / float(gp)
+    ast = float(line['ast']) / float(gp)
+    stl = float(line['stl']) / float(gp)
+    blk = float(line['blk']) / float(gp)
+    to = float(line['to']) / float(gp)
+    pts = float(line['pts']) / float(gp)
     usg = line['usg']
     fpts = line['fpts']
     fpts = float(fpts) / float(gp)
     fpts = round(fpts, 2)
 
-    if(salary is not None):
-        data = (player, team, pos, salary, gp, mins, reb, ast, stl, blk, to, pts, usg, fpts)
-        rotogrinder_lastweek.write('%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s \n' % data)
+    data = (player, team, pos, salary, gp, mins, reb, ast, stl, blk, to, pts, usg, fpts)
+    rotogrinder_lastweek.write('%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s \n' % data)
 
 rotogrinder_lastweek.close()
 

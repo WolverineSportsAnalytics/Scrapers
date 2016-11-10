@@ -43,15 +43,14 @@ for line in py_obj:
     fpmax = line['fpmax']
     floor = line['floor']
     ceil = line['ceil']
-    p2x = float(line['%2x']) * 100
-    p3x = float(line['%3x']) * 100
-    p4x = float(line['%4x']) * 100
-    p5x = float(line['%5x']) * 100
-    p6x = float(line['%6x']) * 100
+    p2x = float(line['%2x']) 
+    p3x = float(line['%3x']) 
+    p4x = float(line['%4x']) 
+    p5x = float(line['%5x']) 
+    p6x = float(line['%6x']) 
 
-    if(salary is not None):
-        data = (player, pos, team, salary, gp, fppg, fpmax, floor, ceil, p2x, p3x, p4x, p5x, p6x)
-        rotogrinders_consistency.write('%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s \n' % data)
+    data = (player, pos, team, salary, gp, fppg, fpmax, floor, ceil, p2x, p3x, p4x, p5x, p6x)
+    rotogrinders_consistency.write('%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s \n' % data)
 
 rotogrinders_consistency.close()
 
